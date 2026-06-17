@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import "../App.css";
+import loginImg from "../assets/login.jpg"; 
 
 export default function Login() {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ export default function Login() {
 
         {/* ── Right: Image + Overlay ── */}
         <div className="auth-right">
-          <img src="/src/assets/login.jpg" alt="expense tracker" className="right-img" />
+          <img src={loginImg} alt="expense tracker" className="right-img" />
           <div className="right-overlay">
 
             {/* glass pill top */}
