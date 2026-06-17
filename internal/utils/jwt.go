@@ -4,9 +4,10 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
+	"os"
 )
 
-var SecretKey = []byte("my-super-secret-key")
+var SecretKey = []byte(os.Getenv("JWT_SECRET"))
 
 func GenerateToken(userID string) (string, error) {
 

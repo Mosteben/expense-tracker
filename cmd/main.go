@@ -1,5 +1,6 @@
 package main
 
+
 import (
 	"time"
 
@@ -11,6 +12,7 @@ import (
 	"github.com/mostafa/expense-tracker/internal/models"
 	"github.com/mostafa/expense-tracker/internal/repository"
 	"github.com/mostafa/expense-tracker/internal/service"
+	"os"
 )
 
 func main() {
@@ -76,6 +78,9 @@ func main() {
 
 	// Dashboard
 	authorized.GET("/dashboard", dashboardHandler.GetDashboard)
-
-	r.Run(":8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	r.Run(":" + port)
 }
