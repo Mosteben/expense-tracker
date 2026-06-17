@@ -37,7 +37,12 @@ func main() {
 		"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS",
 	},
 	AllowHeaders: []string{
-		"Origin", "Content-Type", "Accept", "Authorization",
+		"Origin",
+	"Content-Type",
+	"Accept",
+	"Authorization",
+	"X-Requested-With",
+	"Cache-Control",
 	},
 	AllowCredentials: true,
 	MaxAge: 12 * time.Hour,
