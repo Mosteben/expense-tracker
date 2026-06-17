@@ -28,12 +28,19 @@ func main() {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173"},
-		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
-		AllowCredentials: true,
-		MaxAge:           12 * time.Hour,
-	}))
+	AllowOrigins: []string{
+		"http://localhost:5173",
+		"https://expense-tracker-x4y9.vercel.app",
+	},
+	AllowMethods: []string{
+		"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS",
+	},
+	AllowHeaders: []string{
+		"Origin", "Content-Type", "Accept", "Authorization",
+	},
+	AllowCredentials: true,
+	MaxAge: 12 * time.Hour,
+}))
 
 	userRepo    := repository.NewUserRepository()
 	userService := service.NewUserService(userRepo)
