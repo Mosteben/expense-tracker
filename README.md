@@ -1,38 +1,31 @@
-#  Expense Tracker
-
-
+# Expense Tracker
 
 A full-stack web application for tracking personal expenses, built with a **Go (Gin)** REST API backend and a **React (Vite)** frontend.
 
 ---
 
-##  Live Demo
+## Live Demo
 
 | | |
 |---|---|
-|  **Frontend (Live App)** | [expense-tracker-x4y9.vercel.app](https://expense-tracker-x4y9.vercel.app) |
-|  **Backend API** | [expense-tracker-production-3f7e.up.railway.app](https://expense-tracker-production-3f7e.up.railway.app) |
-
+| **Frontend (Live App)** | [expense-tracker-x4y9.vercel.app](https://expense-tracker-x4y9.vercel.app) |
+| **Backend API** | [expense-tracker-production-3f7e.up.railway.app](https://expense-tracker-production-3f7e.up.railway.app) |
 
 ---
 
-##  Screenshots
+## Screenshots
 
 <p align="center">
   <img src="./screenshots/Screenshot 2026-06-18 013649.png" alt="Login Page" width="45%" />
   <img src="./screenshots/Screenshot 2026-06-18 013758.png" alt="Dashboard" width="45%" />
 </p>
-
 <p align="center">
   <img src="./screenshots/Screenshot 2026-06-18 013816.png" alt="Add Expense" width="45%" />
-  
 </p>
-
-<!--
 
 ---
 
-##  Features
+## Features
 
 **Authentication**
 - User registration
@@ -59,7 +52,7 @@ A full-stack web application for tracking personal expenses, built with a **Go (
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 **Frontend**
 - React
@@ -74,17 +67,16 @@ A full-stack web application for tracking personal expenses, built with a **Go (
 - JWT (`golang-jwt` or similar) for authentication
 
 **Database**
--PostgreSQL
-
-
+- PostgreSQL
 
 **DevOps / Hosting**
-- Frontend -> Vercel
-- Backend -> Railway
--Database -> Neon
+- Frontend → Vercel
+- Backend → Railway
+- Database → Neon
 
+---
 
-##  API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -100,9 +92,9 @@ A full-stack web application for tracking personal expenses, built with a **Go (
 | `PUT` | `/income/:id` | Update an income entry |
 | `DELETE` | `/income/:id` | Delete an income entry |
 
+---
 
-
-##  Getting Started (Local Development)
+## Getting Started (Local Development)
 
 ### Prerequisites
 - Node.js v18+
@@ -110,7 +102,6 @@ A full-stack web application for tracking personal expenses, built with a **Go (
 
 ### Backend setup
 ```bash
-
 cp .env.example .env     # set DATABASE_URL, JWT_SECRET, PORT
 go mod tidy
 go run main.go
@@ -122,10 +113,26 @@ cd frontend
 npm install
 cp .env.example .env     # set VITE_API_URL to your backend URL
 npm run dev
-
-
-
+```
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
+
+```
+expense-tracker/
+├── frontend/      # React + Vite application
+│   ├── src/
+│   └── package.json
+└── cmd/       # Go (Gin) REST API
+    ├── main.go
+    
+```
+
+---
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
