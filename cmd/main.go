@@ -25,7 +25,31 @@ func main() {
 
 	r := gin.Default()
 
-	r.Use(cors.Default())
+	r.Use(cors.New(cors.Config{
+	AllowOrigins: []string{
+		"https://expense-tracker-x4y9-kqbvqgmxr-mostafa-alaa.vercel.app",
+		"http://localhost:5173",
+	},
+
+	AllowMethods: []string{
+		"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS",
+	},
+
+	AllowHeaders: []string{
+		"Origin",
+		"Content-Type",
+		"Accept",
+		"Authorization", 
+	},
+
+	ExposeHeaders: []string{
+		"Content-Length",
+		"Authorization",
+	},
+
+	AllowCredentials: true,
+	MaxAge: 12 * time.Hour,
+}))
 
 	userRepo    := repository.NewUserRepository()
 	userService := service.NewUserService(userRepo)
