@@ -82,7 +82,6 @@ A full-stack web application for tracking personal expenses, built with a **Go (
 |---|---|---|
 | `POST` | `/auth/register` | Register a new user |
 | `POST` | `/auth/login` | Authenticate and receive a JWT |
-| `POST` | `/auth/logout` | Log the current user out |
 | `GET` | `/expenses` | List all expenses for the logged-in user |
 | `POST` | `/expenses` | Create a new expense |
 | `PUT` | `/expenses/:id` | Update an existing expense |
